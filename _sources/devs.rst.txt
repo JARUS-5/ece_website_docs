@@ -1,0 +1,75 @@
+Guide for developers/students
+==============================
+
+There can be some mistakes in this guide as I am not an expert and 
+I am writing things I learned from my point of view. 
+Please let me know if you find any mistakes.
+
+If you are entirely new to web development, check out these resources. 
+I have included minimum requirements if you don't want to invest huge amount of time.
+
+* https://developer.mozilla.org/en-US/docs/Web/HTML - For learning HTML.
+    (Minimum requirement: Beginner's tutorial in this website)
+
+* https://developer.mozilla.org/en-US/docs/Web/CSS - For learning CSS.
+    (Minimum requirement: Basics on what it is)
+
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript - For learing JavaScript.
+    (Minimum requirement: Know how to write functions)
+
+|
+
+Basics
+-------------
+
+When you type a url like http://ece.nitc.ac.in, your browser sends an UDP request to DNS Server
+to resolve the domain name nitc.ac.in to an ip address. The DNS server returns the ip address and 
+your browser will establish a connection to the nitc server. You will get html, css and javascript 
+files through the http protocol (https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) and 
+your browser displays page acoording to contents in html, css and javascript files. 
+
+A machine(host) with http server can have other http server or server with other services like sql server, etc.
+Communication between clients and server happens through sockets and each socket has a port number associated with it.
+For example, a machine with ip address 1.1.1.1 can have http server listening on port 80, and a sql server 
+listening on port 5432.
+
+By default, web browsers assume it is port 80 when you just type the url address.
+That means, you can access http://ece.nitc.ac.in:80 and you will get the same page as before.
+But changing the port number to something other than 80 in the url will result in site can't be reached error.
+
+|
+
+React
+--------
+
+React is a library used to design frontend of the website.
+By running the command "npm run build", we get the html, css and javascript files which are static files.
+
+The frontend files are available at https://github.com/JARUS-5/ecewebsite. 
+Check the README.md file from the above link to know more about setting up the project.
+
+There are many tutorials out there to get you into react and you need to know the basics.
+
+|
+
+Django
+--------
+
+Django is a backend framework. We use django to serve the static files we got from React build and 
+to communicate with the database.
+
+The backend files are available at https://github.com/JARUS-5/ecewebsitebackend.
+Check the README.md file from the above link to know more about setting up the project.
+
+The tutorial in their official website is the best way to get started in django.
+
+|
+
+Website architecture
+-------------------------------
+
+The html, css and js files used for displaying webpages (frontend) are created using React 
+and its libraries like material-ui.
+When a client requests for the webpage, django gives these html, css and js files.
+The js files in the client-side requests django for data to be displayed (like faculty details), 
+django then requests corresponding data from PostgreSQL server and return it to the client.

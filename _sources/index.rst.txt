@@ -1,0 +1,32 @@
+.. ECE Website documentation master file, created by
+   sphinx-quickstart on Tue May 25 20:45:22 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Documentation
+=======================================
+This is a documentation for the ECED website.
+Faculty members and web administrators of the ECED website can use this as a guide.
+I will try to include everything to make your experience with the website as smooth as possible.
+For web developers and students who wish to learn how this website works, I will try to 
+write and include every resources create and deploy a copy of this website or your own website. 
+
+You can search this documentation thing using this search page.
+
+* :ref:`search`
+
+First time use instruction for faculty
+---------------------------------------
+I recommend changing password as soon as you log in for the first time (:ref:`link to guide <changingpsswd>`).
+Passwords in Django are encrypted and therefore cannot be retrieved if its lost. 
+The web administrator cannot see the password but has the permission to change it (if password is lost).
+
+Contents
+=========
+
+.. toctree::
+   :maxdepth: 3
+
+   /faculty
+   /webadmin
+   /devs

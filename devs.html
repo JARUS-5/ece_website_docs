@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Guide for developers/students &#8212; ECE Website 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Guide for web admins" href="webadmin.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="webadmin.html" title="Guide for web admins"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ECE Website 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Guide for developers/students</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="guide-for-developers-students">
+<h1>Guide for developers/students<a class="headerlink" href="#guide-for-developers-students" title="Permalink to this headline">¶</a></h1>
+<p>There can be some mistakes in this guide as I am not an expert and
+I am writing things I learned from my point of view.
+Please let me know if you find any mistakes.</p>
+<p>If you are entirely new to web development, check out these resources.
+I have included minimum requirements if you don’t want to invest huge amount of time.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTML">https://developer.mozilla.org/en-US/docs/Web/HTML</a> - For learning HTML.</dt><dd><p>(Minimum requirement: Beginner’s tutorial in this website)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS">https://developer.mozilla.org/en-US/docs/Web/CSS</a> - For learning CSS.</dt><dd><p>(Minimum requirement: Basics on what it is)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a> - For learing JavaScript.</dt><dd><p>(Minimum requirement: Know how to write functions)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
+<p>When you type a url like <a class="reference external" href="http://ece.nitc.ac.in">http://ece.nitc.ac.in</a>, your browser sends an UDP request to DNS Server
+to resolve the domain name nitc.ac.in to an ip address. The DNS server returns the ip address and
+your browser will establish a connection to the nitc server. You will get html, css and javascript
+files through the http protocol (<a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview</a>) and
+your browser displays page acoording to contents in html, css and javascript files.</p>
+<p>A machine(host) with http server can have other http server or server with other services like sql server, etc.
+Communication between clients and server happens through sockets and each socket has a port number associated with it.
+For example, a machine with ip address 1.1.1.1 can have http server listening on port 80, and a sql server
+listening on port 5432.</p>
+<p>By default, web browsers assume it is port 80 when you just type the url address.
+That means, you can access <a class="reference external" href="http://ece.nitc.ac.in:80">http://ece.nitc.ac.in:80</a> and you will get the same page as before.
+But changing the port number to something other than 80 in the url will result in site can’t be reached error.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="react">
+<h2>React<a class="headerlink" href="#react" title="Permalink to this headline">¶</a></h2>
+<p>React is a library used to design frontend of the website.
+By running the command “npm run build”, we get the html, css and javascript files which are static files.</p>
+<p>The frontend files are available at <a class="reference external" href="https://github.com/JARUS-5/ecewebsite">https://github.com/JARUS-5/ecewebsite</a>.
+Check the README.md file from the above link to know more about setting up the project.</p>
+<p>There are many tutorials out there to get you into react and you need to know the basics.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="django">
+<h2>Django<a class="headerlink" href="#django" title="Permalink to this headline">¶</a></h2>
+<p>Django is a backend framework. We use django to serve the static files we got from React build and
+to communicate with the database.</p>
+<p>The backend files are available at <a class="reference external" href="https://github.com/JARUS-5/ecewebsitebackend">https://github.com/JARUS-5/ecewebsitebackend</a>.
+Check the README.md file from the above link to know more about setting up the project.</p>
+<p>The tutorial in their official website is the best way to get started in django.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="website-architecture">
+<h2>Website architecture<a class="headerlink" href="#website-architecture" title="Permalink to this headline">¶</a></h2>
+<p>The html, css and js files used for displaying webpages (frontend) are created using React
+and its libraries like material-ui.
+When a client requests for the webpage, django gives these html, css and js files.
+The js files in the client-side requests django for data to be displayed (like faculty details),
+django then requests corresponding data from PostgreSQL server and return it to the client.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Guide for developers/students</a><ul>
+<li><a class="reference internal" href="#basics">Basics</a></li>
+<li><a class="reference internal" href="#react">React</a></li>
+<li><a class="reference internal" href="#django">Django</a></li>
+<li><a class="reference internal" href="#website-architecture">Website architecture</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="webadmin.html"
+                        title="previous chapter">Guide for web admins</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/devs.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="webadmin.html" title="Guide for web admins"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ECE Website 1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Guide for developers/students</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Suraj S.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+    </div>
+  </body>
+</html>
